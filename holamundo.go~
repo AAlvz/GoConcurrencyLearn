@@ -1,0 +1,10 @@
+package main
+
+import(
+	"fnt"
+)
+
+func main(){
+     fnt.println("Heloww")
+     fnt.println("Mundillo")
+}
