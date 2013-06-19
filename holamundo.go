@@ -12,7 +12,7 @@ func main(){
      rand.Seed(time.Now().UnixNano())
      for i := 1; i < 10; i++ {
      	 go saluda(i, keepCalm)
-     	 go saludaMundo(keepCalm)
+     	 go mundo(keepCalm)
      }
      time.Sleep(200000)
 }
@@ -23,7 +23,7 @@ func saluda(id int, canal chan int){
      canal <- id
 }
 
-func saludaMundo(canal chan int){
+func mundo(canal chan int){
      id := <- canal
-     fmt.Println("Que ondas ", id)
+     fmt.Println("Mundo ", id)
 }
