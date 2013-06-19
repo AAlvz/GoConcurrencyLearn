@@ -1,0 +1,19 @@
+package main
+
+import (
+       "fmt"
+       "net/http"
+       "time"
+)
+
+var url = []string {
+    "http://rubyconf.com",
+    "http://golang.org", 
+    "http://matt.aimonetti.net/",
+}
+
+type HttpResponse struct {
+     url string
+     response *http.Response
+     err error
+}
