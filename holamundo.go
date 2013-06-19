@@ -7,17 +7,21 @@ import(
 )
 
 func main(){
+     
      rand.Seed(time.Now().UnixNano())
-     saluda(1)
-     saludaOtra(2)
+     for i := 1; i < 10; i++ {
+     	 go saluda(i)
+     	 go saludaOtra(i)
+     }
+     time.Sleep(200000)
 }
 
 func saluda(id int){
-     time.Sleep(rand.Intn(1000))
+     time.Sleep(time.Duration(rand.Intn(1000)))
      fmt.Println("Hola, ", id)
 }
 
 func saludaOtra(id int){
-     time.Sleep(rand.Intn(1000))
+     time.Sleep(time.Duration(rand.Intn(1000)))
      fmt.Println("Que ondas ", id)
 }
